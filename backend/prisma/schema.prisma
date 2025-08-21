@@ -25,23 +25,23 @@ model product {
   createdAt   DateTime @map("created_at")
   updatedAt   DateTime @map("updated_at")
 
-  brandId Int   @map("brand_id")
-  brand   brand @relation(fields: [brandId], references: [id])
+  // brandId Int   @map("brand_id")
+  // brand   brand @relation(fields: [brandId], references: [id])
 
-  categoryId Int      @map("category_id")
-  category   category @relation(fields: [categoryId], references: [id])
+  // categoryId Int      @map("category_id")
+  // category   category @relation(fields: [categoryId], references: [id])
 }
 
 model brand {
   id   Int    @id @default(autoincrement())
   name String
 
-  product product[]
+  // product product[]
 }
 
 model category {
   id   Int    @id @default(autoincrement())
   name String
 
-  product product[]
+  // product product[]
 }

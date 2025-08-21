@@ -1,8 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { Prisma } from "@prisma/client";
-import { CreateProductDto } from "src/aplication/models/create-product.dto";
-import { PrismaService } from "src/infrastructure/database/prisma.service";
 import { Products } from "../entities/products.entity";
+import { PrismaService } from "@infrastructure/database/prisma.service";
+import { CreateProductDto } from "@application/models/create-product.dto";
 
 @Injectable()
 export class ProductService {
@@ -21,11 +20,9 @@ export class ProductService {
                 active: true,
                 cost: dto.cost,
                 createdAt: new Date(),
-                updatedAt: new Date(),
-                brandId: 0,
-                categoryId: 0
+                updatedAt: new Date()
             }
-        });
+        }); 
 
         return Products.fromPrisma(productSave);
     }
